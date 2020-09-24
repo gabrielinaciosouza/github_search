@@ -20,7 +20,7 @@ main() {
 
     when(repository.search(any)).thenAnswer((_) async  => Right(<ResultSearch>[])); //cria o retorno esperado para o metodo
 
-    final result = await usecase('Gabriel');
+    final result = await usecase.call('Gabriel');
     expect(result | null, isA<List<ResultSearch>>());  // deve dar o lado direito, caso der nulo vai dar erro no teste
   });
 
