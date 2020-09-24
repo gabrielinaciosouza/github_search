@@ -23,6 +23,7 @@ environment:
 dependencies:
   dartz:
   mockito:
+  dio:
   flutter:
     sdk: flutter
 
