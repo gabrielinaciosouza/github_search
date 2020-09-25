@@ -12,6 +12,8 @@ class _SearchPageState extends State<SearchPage> {
 
   final bloc = Modular.get<SearchBloc>();
 
+  TextEditingController searchController = TextEditingController();
+
 
   @override
   void dispose() {
@@ -30,6 +32,7 @@ class _SearchPageState extends State<SearchPage> {
           Padding(
             padding: const EdgeInsets.only(right: 8, left: 8, top: 8),
             child: TextField(
+              controller: searchController,
               onChanged: bloc.add,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
@@ -50,10 +53,14 @@ class _SearchPageState extends State<SearchPage> {
                   );
                 }
 
-                if(state is SearchError){
+                if(state is SearchError && searchController.text.isNotEmpty){
                   return Center(
                     child: Text('Houve um erro'),
                   );
+                }
+
+                if(searchController.text.isEmpty){
+                  return Container();
                 }
 
                 if(state is SearchLoading){
