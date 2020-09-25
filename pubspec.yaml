@@ -24,6 +24,9 @@ dependencies:
   dartz:
   mockito:
   dio:
+  flutter_modular:
+  bloc:
+  rxdart:
   flutter:
     sdk: flutter
 

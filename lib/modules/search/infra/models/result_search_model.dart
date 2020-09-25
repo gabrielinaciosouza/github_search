@@ -10,9 +10,9 @@ class ResultSearchModel extends ResultSearch {  //implementação da classe anê
 
   factory ResultSearchModel.fromMap(Map<String, dynamic> map) {
     return new ResultSearchModel(
-      title: map['title'] as String,
-      content: map['content'] as String,
-      img: map['img'] as String,
+      title: map['login'] as String,
+      content: map['url'] as String,
+      img: map['avatar_url'] as String,
     );
   }
 

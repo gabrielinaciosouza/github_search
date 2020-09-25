@@ -2,6 +2,9 @@ abstract class FailureSearch implements Exception {} //Erro criado, especifico p
 
 class InvalidTextError implements FailureSearch {}
 
+
+class EmptyList implements FailureSearch {}
+
 class DatasourceError implements FailureSearch {
   final String message;
 
